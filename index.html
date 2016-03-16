@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Kikbook</title>
+		<script src="http://cdn.kik.com/kik/2.0.5/kik.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+		<style>
+			* {
+				margin: 0;
+			}
+			body, html {
+				text-align: center;
+				font-family: 'Tahoma', 'Arial', 'Helvetica', 'Verdana', sans-serif;
+			}
+			#top, #bottom {
+				color: #333;
+				text-shadow: .05em .05em #000;
+				border-style: solid;
+				width: 100%;
+				box-sizing: border-box;
+				box-shadow: 0 0 1em #222;
+				padding: .2em;
+				height: 10%;
+				position: absolute;
+				left: 0;
+				font-size: .9em;
+			}
+			#top h1 {
+				font-size: 5vh;
+			}
+			h1, h2, h3, h4 {
+				margin: .25em 0;
+			}
+			#top h1 span {
+				color: #2e2;
+			}
+			#top {
+				top: 0;
+				border-width: 0 0 3px 0;
+				text-transform: lowercase;
+			}
+			#bottom {
+				bottom: 0;
+				border-width: 3px 0 0;
+			}
+			#content {
+				position: absolute;
+				top: 10%;
+				bottom: 10%;
+				left: 0;
+				width: 100%;
+				background-color: #444;
+			}
+		</style>
+	</head>
+	<body ng-app>
+		<header id="top">
+			<h1><span>Kik</span>book</h1>
+		</header>
+		<section id="content">
+		</section>
+		<section id="bottom">
+		</section>
+		<script type="text/javascript">
+			if(kik.enabled) {
+				console.log("Hallo!");
+				document.getElementById("content").innerHTML = "Kik!!!!";
+			} else {
+				console.log(kik);
+				
+				document.getElementById("content").innerHTML = "No Kik";
+			}
+		</script>
+	</body>
+</html>
